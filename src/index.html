@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancy Weather</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="background">
+      <main class="container">
+        <div class="control">
+          <div class="control__panel">
+            <div class="control__btn control__btn--reload"></div>
+            <select id="language" class="control__btn control__btn--lang">
+              <option value="EN">EN</option>
+              <option value="RU" selected>RU</option>
+              <option value="BE">BE</option>
+            </select>
+            <div class="control__units">
+              <input
+                id="toggle-cel"
+                class="toggle toggle-left"
+                name="toggle"
+                type="radio"
+                checked
+              />
+              <label for="toggle-cel" class="control__units__btn">°C</label>
+              <input
+                id="toggle-far"
+                class="toggle toggle-right"
+                name="toggle"
+                type="radio"
+              />
+              <label for="toggle-far" class="control__units__btn">°F</label>
+            </div>
+            <div class="control__btn control__btn--voice"></div>
+          </div>
+          <div class="control__search">
+            <form class="control__search__wrap" id="search-form">
+              <div class="control__btn control__btn--microphone"></div>
+              <input
+                type="text"
+                class="control__search__input"
+                placeholder="Search city"
+              />
+              <button class="control__search__btn" type="submit">Search</button>
+            </form>
+            <p class="control__search__notification"></p>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="weather">
+            <div class="info">
+              <div class="info__city"></div>
+              <div class="info__date"></div>
+            </div>
+            <div class="weather__current">
+              <div class="weather__current__info">
+                <p class="weather__current__temp"></p>
+                <img src="" alt="Weather Icon" class="weather__current__icon" />
+              </div>
+
+              <div class="weather__current__desc">
+                <p id="weather-desc"></p>
+                <p id="app-temp"></p>
+                <p id="wind"></p>
+                <p id="hm"></p>
+              </div>
+            </div>
+            <div class="weather__forecast">
+              <div class="weather__forecast__day weather__forecast__day-1">
+                <div class="weather__forecast__weekday"></div>
+                <div class="weather__forecast__temp"></div>
+              </div>
+              <div class="weather__forecast__day weather__forecast__day-2">
+                <div class="weather__forecast__weekday"></div>
+                <div class="weather__forecast__temp"></div>
+              </div>
+              <div class="weather__forecast__day weather__forecast__day-3">
+                <div class="weather__forecast__weekday"></div>
+                <div class="weather__forecast__temp"></div>
+              </div>
+            </div>
+          </div>
+          <div class="location">
+            <div class="location__map">
+              <div id="map"></div>
+            </div>
+            <div class="location__coordinates">
+              <p><span id="latitude-text"></span><span id="latitude"></span></p>
+              <p>
+                <span id="longitude-text"></span><span id="longitude"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

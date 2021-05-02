@@ -1,0 +1,78 @@
+.location {
+  align-self: center;
+  @media screen and (max-width: 1320px) {
+    width: 40rem;
+  }
+  @media screen and (max-width: 890px) {
+    width: 58rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+  }
+  @media screen and (max-width: 740px) {
+    width: 40rem;
+  }
+  @media screen and (max-width: 520px) {
+    width: 28rem;
+  }
+  &__map {
+    position: relative;
+    width: 50rem;
+    height: 40rem;
+    @media screen and (max-width: 1320px) {
+      width: 40rem;
+      height: 32rem;
+    }
+
+    @media screen and (max-width: 890px) {
+      width: 58rem;
+      height: 42rem;
+    }
+    @media screen and (max-width: 740px) {
+      width: 40rem;
+      height: 32rem;
+    }
+    @media screen and (max-width: 520px) {
+      width: 28rem;
+      height: 24rem;
+    }
+  }
+
+  &__coordinates {
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50rem;
+  height: 40rem;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 90%,
+    63% 90%,
+    54% 99%,
+    45% 90%,
+    0 90%
+  );
+  @media screen and (max-width: 1320px) {
+    width: 40rem;
+    height: 32rem;
+  }
+  @media screen and (max-width: 890px) {
+    width: 58rem;
+    height: 42rem;
+  }
+  @media screen and (max-width: 740px) {
+    width: 40rem;
+    height: 32rem;
+  }
+  @media screen and (max-width: 520px) {
+    width: 28rem;
+    height: 24rem;
+  }
+}

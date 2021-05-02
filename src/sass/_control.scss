@@ -1,0 +1,205 @@
+.control {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  @media screen and (max-width: 840px) {
+    padding: 0;
+    padding-bottom: 2.5rem;
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  @media screen and (max-width: 380px) {
+    align-items: center;
+  }
+
+  &__panel {
+    display: flex;
+    @media screen and (max-width: 768px) {
+      margin-top: 1.5rem;
+    }
+  }
+  &__btn {
+    margin-right: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    color: #fff;
+    font-size: 1.4rem;
+    background: rgba(174, 181, 185, 0.5);
+    border: 1px solid rgb(166, 166, 166);
+    border-radius: 5px;
+    cursor: pointer;
+
+    @media screen and (max-width: 380px) {
+      width: 4rem;
+      height: 4rem;
+      font-size: 1.2rem;
+    }
+
+    &--reload {
+      background-image: url('../img/loop2.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 2rem;
+    }
+
+    &--voice {
+      background-image: url('../img/volume.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 2rem;
+    }
+
+    &--microphone {
+      background-image: url('../img/mic.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 2rem;
+    }
+
+    &--mic-active {
+      background-image: url('../img/mic-active.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 2rem;
+      // color: rgb(209, 83, 66);
+    }
+  }
+
+  &__units {
+    cursor: pointer;
+    margin-right: 1rem;
+
+    input:active {
+      outline: none;
+      cursor: pointer;
+    }
+    &__btn {
+      border: 1px solid rgb(166, 166, 166);
+      color: rgba(194, 194, 194, 0.9);
+      display: inline-block;
+      width: 4.5rem;
+      height: 4.5rem;
+      padding: 1.2rem 0;
+      position: relative;
+      font-size: 1.6rem;
+      text-align: center;
+      transition: all 600ms ease;
+
+      @media screen and (max-width: 380px) {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.4rem;
+      }
+    }
+
+    .toggle {
+      display: none;
+      &.toggle-left + .control__units__btn {
+        border-radius: 5px 0 0 5px;
+      }
+      &.toggle-right + .control__units__btn {
+        border-radius: 0 5px 5px 0;
+      }
+      & + label {
+        cursor: pointer;
+        min-width: 60px;
+        &:hover {
+          background: rgba(174, 181, 185, 0.2);
+          color: #fff;
+        }
+        &:after {
+          background: rgba(174, 181, 185, 0.5);
+          content: '';
+          height: 100%;
+          position: absolute;
+          top: 0;
+          transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
+          width: 100%;
+          z-index: -1;
+        }
+      }
+      &.toggle-left + label {
+        border-right: 0;
+        &:after {
+          left: 100%;
+        }
+      }
+      &.toggle-right + label {
+        margin-left: -5px;
+        &:after {
+          left: -100%;
+        }
+      }
+      &:checked + label {
+        background: rgba(174, 181, 185, 0.5);
+        cursor: default;
+        color: #fff;
+        transition: color 200ms;
+        &:after {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &__search {
+    &__wrap {
+      display: flex;
+    }
+    &__input {
+      color: #fff;
+      font-size: 1.4rem;
+      background: rgba(174, 181, 185, 0.5);
+      border: 1px solid rgb(166, 166, 166);
+      width: 24rem;
+      height: 4.5rem;
+      border-radius: 5px;
+      margin-right: 1rem;
+      padding: 0 1.5rem;
+      outline: none;
+
+      @media screen and (max-width: 520px) {
+        width: 19rem;
+      }
+
+      @media screen and (max-width: 380px) {
+        width: 14.5rem;
+        height: 4rem;
+        font-size: 1.2rem;
+      }
+
+      &::placeholder {
+        color: #fff;
+        opacity: 0.7;
+      }
+    }
+
+    &__btn {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 1.4rem;
+      background: rgba(174, 181, 185, 0.5);
+      border: 1px solid rgb(166, 166, 166);
+      height: 4.5rem;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0 1.5rem;
+      outline: none;
+      cursor: pointer;
+
+      @media screen and (max-width: 380px) {
+        height: 4rem;
+        font-size: 1.2rem;
+      }
+    }
+    &__notification {
+      margin-top: 1.5rem;
+      font-size: 1.8rem;
+      color: #fff;
+    }
+  }
+}
